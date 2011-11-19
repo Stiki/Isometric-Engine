@@ -26,7 +26,7 @@ public class Map {
 		if (((mL - 1) & (mL - 2)) == 0) {
 			mapLength = mL;
 		} else {
-			mapLength = (int) Math.pow(2,TerrainFactory.log2(mL)) + 1;
+			mapLength = (int) Math.pow(2,DiamondQuareTerrainFactory.log2(mL)) + 1;
 			System.out.println("Map Length Changed to: " + mapLength);
 		}
 		waterLevel = wL;
@@ -35,7 +35,7 @@ public class Map {
 	
 	public static void main(String[] args) {
 		Map m = new Map(513, new Random().nextLong(), 1);
-		m.setMapArray(TerrainFactory.generateRandomMap(m, new Random().nextLong(),10));
+		m.setMapArray(DiamondQuareTerrainFactory.generateRandomMap(m, new Random().nextLong(),10));
 		final MapElement[][] array = m.getMapArray();
 		JFrame x = new JFrame("Hello");
 		JPanel p = new JPanel() {

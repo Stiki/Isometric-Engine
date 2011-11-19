@@ -5,7 +5,7 @@ import java.util.Random;
 
 import net.jonohawkins.isometric.map.elements.*;
 
-public class TerrainFactory {
+public class DiamondQuareTerrainFactory {
 	
 	public static double lastMax;
 	
@@ -94,12 +94,12 @@ public class TerrainFactory {
 				divisor *= 2;
 		}
 		
-		for (int x = 0; x < map.getMapLength(); x++) {
+		/*for (int x = 0; x < map.getMapLength(); x++) {
 			for (int y = 0; y < map.getMapLength(); y++) {
 				System.out.print(tempMap[x][y].getHeight() + "\t");
 			}
 			System.out.println();
-		}
+		}*/
 		
 		System.out.println("- " + lastMax);
 		
