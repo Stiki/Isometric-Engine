@@ -1,22 +1,23 @@
-package net.jonohawkins.isometric.map;
+package net.jonohawkins.isometric.map.elements;
 
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
+import net.jonohawkins.isometric.map.ElementTypes;
 
 public abstract class MapElement {
 	
-	private ElementType		type;
+	private ElementTypes		type;
 	private BufferedImage[] 	textures = new BufferedImage[3];
 	private double 			length, //	X
 							width,  //	Z
 							height; //	Y
 						
-	public MapElement (ElementType eT, BufferedImage[] tex) {
+	public MapElement (ElementTypes eT) {
 		setType(eT);
-		if (tex.length == 3) setTextures(tex);
 	}
 	
-	public abstract void render(long tick);
+	public abstract void render(Graphics gtx);
 	public abstract void update(long tick);
 
 	public BufferedImage[] getTextures() {
@@ -35,11 +36,11 @@ public abstract class MapElement {
 		this.length = length;
 	}
 
-	public ElementType getType() {
+	public ElementTypes getType() {
 		return type;
 	}
 
-	public void setType(ElementType type) {
+	public void setType(ElementTypes type) {
 		this.type = type;
 	}
 
